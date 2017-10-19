@@ -1,19 +1,16 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 
-var store;
-export default {
-  configureStore: (initialState) => {
-    var reducers = combineReducers({
+export default function configureStore(initialState) {
+  var reducers = combineReducers({
 
-    })
+  })
 
-    store = createStore(
-      reducers,
-      initialState,
-      applyMiddleware(thunk)
-    )
+  var store = createStore(
+    reducers,
+    initialState,
+    applyMiddleware(thunk)
+  )
 
-    return store;
-  }
+  return store;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import { Provider } from 'react-redux';
+import { AppContainer } from 'react-hot-loader'
 import registerServiceWorker from './registerServiceWorker';
 
 import RootContainer from './containers/RootContainer';
@@ -11,9 +11,11 @@ import configureStore from './store/configureStore';
 
 const render = (Component) => {
   ReactDOM.render(
-    <Provider store={configureStore()}>
-      <Component />
-    </Provider>,
+    <AppContainer>
+      <Provider store={configureStore()}>
+        <Component />
+      </Provider>
+    </AppContainer>,
     document.getElementById('root')
   );
 };
