@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const Nav = () => (
   <div>
-    Nav
+    Navigation info
   </div>
 )
 
